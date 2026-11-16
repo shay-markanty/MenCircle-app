@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='men-circle-d6328476b681435a';
+const CACHE='men-circle-b221f4f6d6f2f6d7';
 const BASE=new URL('./',self.location.href);
 const FILES=["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png"].map(f=>new URL(f,BASE).href);
 self.addEventListener('install',event=>event.waitUntil((async()=>{
