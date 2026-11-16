@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f5f0">
+<meta name="description" content="כלי מקומי ופשוט להנחיית מעגל: סדר משתתפים, זמן לשיתוף ונושאים להמשך.">
+<title>זמן למעגל</title>
+<style>
+:root{color-scheme:light;--bg:#f6f5f0;--paper:#fffefa;--ink:#253d36;--muted:#66736c;--line:#d9ddd5;--accent:#365e4f;--soft:#e8eee7;--warn:#865625;font-family:Arial,"Noto Sans Hebrew",sans-serif;font-size:17px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);line-height:1.6}button,input,textarea,select{font:inherit}button{cursor:pointer;touch-action:manipulation}button,input,textarea,select{border:1px solid var(--line);border-radius:9px}button{min-height:46px;padding:9px 17px;color:var(--ink);background:var(--paper)}button:hover{background:var(--soft)}button:disabled{opacity:.45;cursor:default}button.primary{background:var(--accent);color:white;border-color:var(--accent)}button.quiet{background:transparent}button.small{min-height:40px;padding:6px 12px;font-size:.88rem}button.danger{color:#8b3b2f}input,textarea,select{width:100%;padding:10px 12px;background:var(--paper);color:var(--ink)}input[type=checkbox]{width:20px;height:20px;accent-color:var(--accent)}input[type=number]{direction:ltr;text-align:center}textarea{resize:vertical;min-height:130px}label{display:block;font-size:.92rem}label input,label select{margin-top:6px}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #82a98d;outline-offset:3px}
+header,main,footer{max-width:680px;margin:auto;padding-inline:22px}header{display:flex;align-items:center;justify-content:space-between;padding-top:25px;padding-bottom:18px;border-bottom:1px solid var(--line);gap:12px}.brand{font-size:1.13rem;font-weight:700}.subtle,.muted{color:var(--muted)}.subtle{font-size:.8rem}main{padding-top:26px;padding-bottom:28px}footer{padding-bottom:max(25px,env(safe-area-inset-bottom));font-size:.77rem;color:var(--muted)}h1{font-size:1.65rem;font-weight:600;line-height:1.35;margin:0 0 10px}h2{font-size:1.1rem;font-weight:600;margin:0 0 12px}p{margin:0 0 17px}.eyebrow{font-size:.83rem;color:var(--muted);margin-bottom:10px}.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:21px;margin-top:20px}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.between{justify-content:space-between}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.actions button.primary{flex-grow:1}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.full{grid-column:1/-1}.hint{font-size:.84rem;color:var(--muted);margin-top:8px}.check{display:flex;gap:10px;align-items:center;margin-top:15px}.check input{margin:0;flex-shrink:0}.list{list-style:none;padding:0;margin:16px 0 0}.list li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}.list li:last-child{border-bottom:0}.number{width:27px;color:var(--muted);font-size:.88rem;flex-shrink:0}.pill{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:30px;padding:5px 13px;font-size:.88rem;background:var(--paper)}.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.timer{text-align:center;padding:28px 12px 22px}.clock{font-size:clamp(4rem,17vw,5.4rem);line-height:1.15;font-weight:400;letter-spacing:-3px;font-variant-numeric:tabular-nums;direction:ltr;margin:12px 0}.phase{font-size:1.1rem}.overdue{color:var(--warn)}.timer .muted{font-size:.86rem;min-height:28px}.timer .actions{justify-content:center}.progress{height:3px;background:var(--line);margin-top:25px;border-radius:9px;overflow:hidden}.progress span{display:block;height:100%;background:var(--accent);width:0}details{margin-top:20px}summary{cursor:pointer;padding:10px 0;color:var(--muted);font-size:.9rem}.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}.stat{padding:18px;background:var(--paper);border:1px solid var(--line);border-radius:11px}.stat strong{display:block;font-size:1.7rem;font-weight:400;direction:ltr;text-align:right;font-variant-numeric:tabular-nums}.stat span{font-size:.82rem;color:var(--muted)}.topic{padding:14px 0;border-bottom:1px solid var(--line)}.topic:last-child{border:0}.topic p{margin:3px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}.topic .muted{font-size:.8rem}.queue-item{display:flex;gap:8px;align-items:center;margin-top:10px}.queue-item span{flex:1}.queue-item button{padding:5px 10px}.notice{border-inline-start:3px solid #bba16b;padding:10px 14px;background:#f3eedf;margin:14px 0;font-size:.86rem}.error{color:#943a2e;font-size:.9rem;margin-top:10px}.hidden,[hidden]{display:none!important}.divider{border:0;border-top:1px solid var(--line);margin:22px 0}.linklike{border:0;padding:5px 0;min-height:35px;background:transparent;text-decoration:underline;text-underline-offset:4px}.keep{white-space:nowrap}dialog{border:1px solid var(--line);border-radius:13px;background:var(--paper);color:var(--ink);width:min(440px,calc(100% - 32px));padding:25px}dialog::backdrop{background:#17282066}dialog h2{margin-top:0}#toast{position:fixed;bottom:20px;inset-inline:20px;margin:auto;max-width:540px;background:var(--ink);color:#fff;padding:11px 17px;border-radius:9px;font-size:.88rem;z-index:10}#save-state{font-size:.73rem}#queue-speaking{font-size:.9rem;margin-bottom:12px}#file-input{display:none}@media(max-width:420px){header,main,footer{padding-inline:17px}.card{padding:17px}.fields{gap:12px}h1{font-size:1.5rem}.actions button{flex-grow:1}.stats{gap:10px}.stat{padding:14px}.row button.small{flex-grow:0}}@media(prefers-reduced-motion:no-preference){button{transition:background .12s}}@media print{header button,footer,button,details,#queue-panel{display:none!important}body{background:white}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div><div class="brand">זמן למעגל</div><div class="subtle">מקום לכל אחד</div></div><button id="settings-toggle" class="small quiet" type="button">אפשרויות</button></header>
+<main id="app"></main>
+<footer><div id="save-state">המידע נשאר בדפדפן הזה בלבד.</div><div>סיום השיח ב־22:25 · חמש דקות לסגירה עד 22:30</div><div id="offline-state" role="status"></div><button id="install-app" class="small quiet" type="button" hidden>התקנה בטלפון</button></footer>
+<div id="toast" role="status" hidden></div>
+<dialog id="settings-dialog" aria-labelledby="settings-title"><h2 id="settings-title">אפשרויות המפגש</h2><form id="settings-form">
+<div class="fields"><label>שיתוף אישי · דקות<input name="share" type="number" min="0.25" max="60" step="0.25" required></label><label>שיח חופשי · דקות<input name="discuss" type="number" min="0.25" max="60" step="0.25" required></label><label>זמן עיבוד · שניות<input name="reflect" type="number" min="0" max="120" step="1" required></label><label>צליל בזמן העיבוד<select name="reflectionSound"><option value="bells">צליל בתחילה ובסוף</option><option value="ambient">צליל רך מתמשך</option></select></label></div>
+<label class="check"><input name="sound" type="checkbox">התראות קוליות</label><label class="check"><input name="awake" type="checkbox">להשאיר את המסך ער, אם אפשר</label>
+<p class="hint">הזמנים חלים על כולם. שינוי במהלך תור שומר את הזמן שכבר חלף. צלילים פועלים כשהדף פתוח והטלפון מאפשר השמעת שמע.</p><div class="row"><button id="test-sound" type="button" class="small">בדיקת צליל</button><span id="wake-status" class="hint"></span></div><div class="actions"><button class="primary" type="submit">שמירת הגדרות</button><button id="settings-close" type="button">ביטול</button></div></form>
+<hr class="divider"><div class="row"><button id="export" type="button" class="small">ייצוא גיבוי</button><button id="import" type="button" class="small">טעינת גיבוי</button><button id="reset" type="button" class="small danger">מפגש חדש</button></div><p class="hint">גיבוי מאפשר להעביר את המפגש בין מכשירים או לשמור עותק בקובץ.</p></dialog>
+<dialog id="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title">להתחיל מפגש חדש?</h2><p>נתוני המפגש הנוכחי יוחלפו. אפשר לייצא גיבוי לפני שמתחילים מחדש.</p><div class="actions"><button id="confirm-reset" class="primary">התחלת מפגש חדש</button><button id="cancel-reset">חזרה למפגש</button></div></dialog>
+<input id="file-input" type="file" accept="application/json,.json">
+<script id="core">
+'use strict';
+const CircleCore = (() => {
+  const defaults = () => ({share:180, discuss:240, reflect:10, sound:true, reflectionSound:'bells', awake:true});
+  const israelClock = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jerusalem',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
+  const fresh = () => ({version:1,view:'people',people:[],order:[],pending:[],records:[],settings:defaults(),turn:null,note:'',queue:[],responding:null,responded:[],draft:''});
+  function shuffle(items, random = () => crypto.getRandomValues(new Uint32Array(1))[0] / 4294967296) {
+    const a = [...items];
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    return a;
+  }
+  function newTurn(now){return {phase:'share',startedAt:now,elapsed:0,paused:false,lastOvertimeMinute:-1};}
+  function elapsed(turn,now){return turn.elapsed+(turn.paused?0:Math.max(0,now-turn.startedAt));}
+  function duration(turn,settings){return settings[turn.phase]*1000;}
+  function transition(turn,phase,carry,now){turn.phase=phase;turn.startedAt=now;turn.elapsed=carry;turn.lastOvertimeMinute=-1;}
+  function tick(turn,settings,now){
+    const events=[];
+    if(!turn||turn.paused)return events;
+    while(turn.phase!=='discuss' && elapsed(turn,now)>=duration(turn,settings)){
+      const carry=elapsed(turn,now)-duration(turn,settings);
+      transition(turn,turn.phase==='share'?'reflect':'discuss',carry,now);
+      events.push(turn.phase);
+    }
+    if(turn.phase==='discuss' && elapsed(turn,now)>=duration(turn,settings)){
+      const minute=Math.floor((elapsed(turn,now)-duration(turn,settings))/60000);
+      if(minute>turn.lastOvertimeMinute){turn.lastOvertimeMinute=minute;events.push(minute===0?'end':'reminder');}
+    }
+    return events;
+  }
+  function pause(turn,now){if(!turn.paused){turn.elapsed=elapsed(turn,now);turn.startedAt=now;turn.paused=true;}}
+  function resume(turn,now){if(turn.paused){turn.startedAt=now;turn.paused=false;}}
+  function moveNext(turn,now){transition(turn,turn.phase==='share'?'reflect':'discuss',0,now);}
+  function pass(state,defer){
+    if(defer && state.pending.length<2)return false;
+    const id=state.pending.shift();
+    if(defer)state.pending.push(id);else state.records.push({id,topics:'',status:'skipped'});
+    state.turn=null;state.queue=[];state.responding=null;state.responded=[];
+    if(!state.pending.length)state.view='summary';
+    return true;
+  }
+  function complete(state,topics){
+    state.records.push({id:state.pending.shift(),topics:topics.trim(),status:'shared'});
+    state.note='';state.turn=null;state.queue=[];state.responding=null;state.responded=[];
+    state.view=state.pending.length?'active':'summary';
+  }
+  function meetingTime(now,count){
+    const parts=israelClock.formatToParts(new Date(now));
+    const get=type=>Number(parts.find(p=>p.type===type).value);
+    const remaining=Math.max(0,(22*3600+25*60-get('hour')*3600-get('minute')*60-get('second'))*1000);
+    return {remaining,perPerson:count?remaining/count:0};
+  }
+  function validState(s){
+    if(!s||s.version!==1||!['people','order','timing','active','note','summary'].includes(s.view))return false;
+    if(!Array.isArray(s.people)||s.people.length>100||!s.people.every(p=>p&&typeof p.id==='string'&&typeof p.name==='string'&&p.name.trim().length>0&&p.name.length<=100))return false;
+    const ids=new Set(s.people.map(p=>p.id));if(ids.size!==s.people.length)return false;
+    if(!s.settings||!['share','discuss','reflect'].every(k=>Number.isFinite(s.settings[k])&&s.settings[k]>=(k==='reflect'?0:15)&&s.settings[k]<=(k==='reflect'?120:3600)))return false;
+    if(typeof s.settings.sound!=='boolean'||typeof s.settings.awake!=='boolean'||!['bells','ambient'].includes(s.settings.reflectionSound))return false;
+    if(!['order','pending','queue','responded'].every(k=>Array.isArray(s[k])&&s[k].every(id=>ids.has(id))&&new Set(s[k]).size===s[k].length))return false;
+    if(!Array.isArray(s.records)||!s.records.every(r=>r&&ids.has(r.id)&&['shared','skipped'].includes(r.status)&&typeof r.topics==='string'&&r.topics.length<=5000))return false;
+    const done=s.records.map(r=>r.id);if(new Set(done).size!==done.length||s.pending.some(id=>done.includes(id)))return false;
+    if(s.responding!==null&&!ids.has(s.responding))return false;
+    if(typeof s.note!=='string'||s.note.length>5000||typeof s.draft!=='string'||s.draft.length>11000)return false;
+    if(['active','note'].includes(s.view)&&!s.pending.length)return false;
+    if(s.view!=='people'&&(!s.people.length||s.order.length!==ids.size))return false;
+    if(['active','note','summary'].includes(s.view)&&s.pending.length+s.records.length!==ids.size)return false;
+    if(s.view==='summary'&&s.pending.length)return false;
+    if(s.turn && (!['share','reflect','discuss'].includes(s.turn.phase)||!Number.isFinite(s.turn.startedAt)||!Number.isFinite(s.turn.elapsed)||s.turn.elapsed<0||typeof s.turn.paused!=='boolean'||!Number.isInteger(s.turn.lastOvertimeMinute)||s.turn.lastOvertimeMinute < -1))return false;
+    if(s.turn&&s.view!=='active')return false;
+    return true;
+  }
+  return {defaults,fresh,shuffle,newTurn,elapsed,duration,tick,pause,resume,moveNext,pass,complete,meetingTime,validState};
+})();
+</script>
+<script>
+'use strict';
+const C=CircleCore,KEY='men-circle-v1';
+const $=id=>document.getElementById(id);
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let storageWorks=true,state=C.fresh(),audioContext=null,ambient=null,wakeLock=null,toastTimer,dirty=true,lastSaved=0;
+try{const raw=localStorage.getItem(KEY);if(raw){const loaded=JSON.parse(raw);if(C.validState(loaded))state=loaded;else throw Error('invalid');}}catch{storageWorks=false;}
+function save(force=false){dirty=true;if(!force&&Date.now()-lastSaved<1000)return;try{localStorage.setItem(KEY,JSON.stringify(state));storageWorks=true;lastSaved=Date.now();dirty=false;}catch{storageWorks=false;}updateStorage();}
+function updateStorage(){$('save-state').textContent=storageWorks?'המידע נשמר אוטומטית בדפדפן הזה בלבד.':'השמירה המקומית אינה זמינה. כדאי לייצא גיבוי לפני שסוגרים.';}
+function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4500);}
+function person(id){return state.people.find(p=>p.id===id)?.name||'';}
+function current(){return state.pending[0];}
+function clock(ms){const n=Math.max(0,Math.ceil(ms/1000));return `${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`;}
+function durationText(seconds){return seconds%60===0?`${seconds/60} דקות`:`${clock(seconds*1000)} דקות`;}
+function settingsFields(){return `<div class="fields"><label>שיתוף אישי · דקות<input id="share-minutes" type="number" min="0.25" max="60" step="0.25" value="${state.settings.share/60}" required></label><label>שיח חופשי · דקות<input id="discuss-minutes" type="number" min="0.25" max="60" step="0.25" value="${state.settings.discuss/60}" required></label></div>`;}
+function render(){
+  stopAmbient();
+  const app=$('app');
+  if(state.view==='people'){
+    app.innerHTML=`<div class="eyebrow">שלב 1 מתוך 3 · הכנת המפגש</div><h1>מי במעגל היום?</h1><p class="muted">שם אחד בכל שורה. מכאן נגריל את סדר השיתוף.</p><form id="people-form"><label for="names">שמות המשתתפים</label><textarea id="names" rows="7" maxlength="11000" placeholder="איתי\nיואב\nאורי">${escapeHtml(state.draft)}</textarea><div id="names-error" class="error" role="alert"></div><div class="actions"><button class="primary" type="submit">הגרלת סדר השיתוף</button></div></form><p class="hint">בלי חשבון ובלי חיבור לאינטרנט. המפגש נשמר במכשיר הזה.</p>`;
+    $('names').addEventListener('input',e=>{state.draft=e.target.value;save();});
+    $('people-form').onsubmit=e=>{e.preventDefault();const names=$('names').value.split(/\r?\n/).map(n=>n.trim()).filter(Boolean);if(!names.length||names.length>100||names.some(n=>n.length>100)){$('names-error').textContent='צריך להזין בין משתתף אחד ל־100, ועד 100 תווים לשם.';return;}if(new Set(names).size!==names.length){$('names-error').textContent='יש שמות זהים. הוסיפו שם משפחה או סימן מזהה כדי להבדיל ביניהם.';return;}state.people=names.map((name,i)=>({id:`p${i}`,name}));state.order=C.shuffle(state.people.map(p=>p.id));state.view='order';save(true);render();};
+  }else if(state.view==='order'){
+    app.innerHTML=`<div class="eyebrow">שלב 2 מתוך 3 · סדר השיתוף</div><h1>לכל אחד יש מקום</h1><p class="muted">זה הסדר שהוגרל. במפגש עצמו אפשר לדלג או לדחות לסוף.</p><ol class="list">${state.order.map((id,i)=>`<li><span class="number">${i+1}.</span><span>${escapeHtml(person(id))}</span></li>`).join('')}</ol><div class="actions"><button id="to-timing" class="primary">ממשיכים להגדרת הזמן</button><button id="reshuffle">הגרלה מחדש</button></div><button id="to-people" class="linklike muted">עריכת המשתתפים</button>`;
+    $('reshuffle').onclick=()=>{state.order=C.shuffle(state.order);save(true);render();};$('to-timing').onclick=()=>{state.view='timing';save(true);render();};$('to-people').onclick=()=>{state.view='people';save(true);render();};
+  }else if(state.view==='timing'){
+    app.innerHTML=`<div class="eyebrow">שלב 3 מתוך 3 · זמן משותף</div><h1>כמה זמן לכל אחד?</h1><p class="muted">אותו זמן לכולם. בין השיתוף לשיח נשאיר רגע לעכל.</p><form id="timing-form"><div class="card">${settingsFields()}<label class="check"><input id="reflection-enabled" type="checkbox" ${state.settings.reflect?'checked':''}>${state.settings.reflect||10} שניות שקט לעיבוד, בלי בקשות דיבור</label><label class="check"><input id="sound-enabled" type="checkbox" ${state.settings.sound?'checked':''}>התראות קוליות עדינות</label></div><div id="estimate" class="notice"></div><p class="hint">הזמן כולל שיתוף, עיבוד ושיח. תיעוד הנושאים ומעברים מוסיפים זמן. חמש הדקות האחרונות נשמרות לסגירה.</p><div class="actions"><button class="primary" type="submit">פתיחת הסבב</button><button id="back-order" type="button">חזרה לסדר</button></div></form>`;
+    const estimate=()=>{const total=((Number($('share-minutes').value)+Number($('discuss-minutes').value))*60+($('reflection-enabled').checked?(state.settings.reflect||10):0))*state.people.length;const free=C.meetingTime(Date.now(),state.people.length).remaining/1000;$('estimate').textContent=`${state.people.length} משתתפים · לפחות ${Math.ceil(total/60)} דקות לסבב.${total>free?' הסבב ארוך מהזמן שנותר עד 22:25. אפשר לקצר את הזמנים.':''}`;};
+    $('timing-form').addEventListener('input',estimate);estimate();
+    $('timing-form').onsubmit=e=>{e.preventDefault();state.settings.share=Number($('share-minutes').value)*60;state.settings.discuss=Number($('discuss-minutes').value)*60;state.settings.reflect=$('reflection-enabled').checked?(state.settings.reflect||10):0;state.settings.sound=$('sound-enabled').checked;state.pending=[...state.order];state.view='active';unlockAudio();requestWake();save(true);render();};$('back-order').onclick=()=>{state.view='order';save(true);render();};
+  }else if(state.view==='active'){
+    const id=current(),index=state.records.length+1;
+    app.innerHTML=`<div class="eyebrow">סבב ראשון · ${index} מתוך ${state.people.length}</div><h1>${escapeHtml(person(id))}</h1><p class="muted">${state.turn?'המקום שלך. המעגל מקשיב.':'אפשר להתחיל כשנוח, לדלג או לבקש לחזור בסוף.'}</p>${state.turn?`<section class="card timer" aria-label="טיימר השיתוף"><div id="phase" class="phase"></div><div id="timer-clock" class="clock" role="timer" aria-live="off"></div><div id="timer-help" class="muted"></div><div class="progress" aria-hidden="true"><span id="timer-progress"></span></div><div class="actions"><button id="pause">${state.turn.paused?'המשך':'השהיה'}</button><button id="next-phase" class="quiet">מעבר לעיבוד</button></div></section><div class="actions"><button id="finish" class="primary">סיום השיתוף ותיעוד נושא</button></div><div id="queue-panel"></div>`:`<div class="card"><div class="row between"><span>שיתוף אישי</span><span>${durationText(state.settings.share)}</span></div><div class="row between"><span>עיבוד בשקט</span><span>${state.settings.reflect} שניות</span></div><div class="row between"><span>שאלות ושיח</span><span>${durationText(state.settings.discuss)}</span></div></div><div class="actions"><button id="start" class="primary">התחלת השיתוף</button></div>`}<div class="row" style="margin-top:18px"><button id="defer" class="small quiet" ${state.pending.length<2?'disabled':''}>לדחות לסוף</button><button id="skip" class="small quiet">לדלג על התור</button></div><details><summary>מי בהמשך הסבב? (${state.pending.length-1})</summary><ol class="list">${state.pending.slice(1).map((p,i)=>`<li><span class="number">${i+1}.</span>${escapeHtml(person(p))}</li>`).join('')||'<li class="muted">זה המשתתף האחרון בסבב.</li>'}</ol></details><div id="phase-announcement" class="hidden" aria-live="polite"></div>`;
+    if(state.turn){
+      $('pause').onclick=()=>{unlockAudio();state.turn.paused?C.resume(state.turn,Date.now()):C.pause(state.turn,Date.now());save(true);render();};
+      $('next-phase').onclick=()=>{unlockAudio();C.moveNext(state.turn,Date.now());const events=C.tick(state.turn,state.settings,Date.now());playEvent(events.at(-1)||state.turn.phase);save(true);render();};
+      $('finish').onclick=()=>{state.turn=null;state.view='note';state.queue=[];state.responding=null;save(true);render();};
+      paintTimer();renderQueue();
+    }else $('start').onclick=()=>{unlockAudio();requestWake();state.turn=C.newTurn(Date.now());save(true);render();};
+    $('defer').onclick=()=>{if(C.pass(state,true)){save(true);render();}};
+    $('skip').onclick=()=>{C.pass(state,false);save(true);render();};
+  }else if(state.view==='note'){
+    app.innerHTML=`<div class="eyebrow">סיכום השיתוף · הטיימר נעצר</div><h1>מה עלה אצל ${escapeHtml(person(current()))}?</h1><p class="muted">כמה מילים שיזכירו למעגל את הנושא. אפשר לכתוב כמה נושאים, כל אחד בשורה.</p><form id="note-form"><label for="topic-note">נושאים להמשך</label><textarea id="topic-note" rows="4" maxlength="5000" placeholder="למשל: קושי לבקש עזרה">${escapeHtml(state.note)}</textarea><div class="actions"><button class="primary" type="submit">${state.pending.length>1?'שמירה ומעבר למשתתף הבא':'שמירה והצגת סיכום המעגל'}</button></div><p class="hint">אפשר להמשיך גם בלי להזין נושא. הזמן של המשתתף הבא יתחיל רק בלחיצה שלך.</p></form>`;
+    $('topic-note').oninput=e=>{state.note=e.target.value;save();};$('note-form').onsubmit=e=>{e.preventDefault();C.complete(state,$('topic-note').value);save(true);render();};
+  }else if(state.view==='summary'){
+    const topics=state.records.filter(r=>r.status==='shared'&&r.topics.trim());
+    app.innerHTML=`<div class="eyebrow">סבב שני · שיחה פתוחה</div><h1>מה נרצה להרחיב?</h1><p class="muted">מסתכלים על מה שעלה, ובוחרים יחד לאן להמשיך.</p><div class="stats"><div class="stat"><strong id="remaining"></strong><span>זמן לשיח עד 22:25</span></div><div class="stat"><strong id="per-person"></strong><span>זמן ממוצע לכל אחד · ${state.people.length} משתתפים</span></div></div><p id="closing-notice" class="hint"></p><section class="card"><h2>הנושאים שעלו</h2>${topics.length?topics.map(r=>`<div class="topic"><div class="muted">${escapeHtml(person(r.id))}</div><p>${escapeHtml(r.topics)}</p></div>`).join(''):'<p class="muted">לא תועדו נושאים בסבב הזה.</p>'}</section><div id="queue-panel"></div><details><summary>כל המשתתפים והתיעוד</summary><div id="records-editor">${state.records.map((r,i)=>`<div class="topic"><label for="record-${i}">${escapeHtml(person(r.id))}${r.status==='skipped'?' · דילג על התור':''}</label><textarea id="record-${i}" data-record="${i}" maxlength="5000" rows="2" style="min-height:75px">${escapeHtml(r.topics)}</textarea></div>`).join('')}</div></details>`;
+    document.querySelectorAll('[data-record]').forEach(el=>el.addEventListener('input',()=>{state.records[Number(el.dataset.record)].topics=el.value;save();}));
+    document.querySelector('details').addEventListener('toggle',e=>{if(!e.target.open){save(true);render();}});renderQueue();paintSummary();
+  }
+  updateStorage();
+}
+function paintTimer(){
+  if(!state.turn||!$('timer-clock'))return;
+  const t=state.turn,elapsed=C.elapsed(t,Date.now()),duration=C.duration(t,state.settings),over=elapsed>=duration&&t.phase==='discuss',phase={share:'שיתוף אישי',reflect:'רגע לעכל',discuss:'שאלות ושיח חופשי'}[t.phase];
+  $('phase').textContent=phase+(t.paused?' · בהשהיה':'');$('timer-clock').textContent=(over?'+':'')+clock(over?elapsed-duration:duration-elapsed);$('timer-clock').classList.toggle('overdue',over);
+  $('timer-help').textContent=over?'חריגה מהזמן · תזכורת בכל דקה':({share:'מקשיבים, בלי תגובות',reflect:'נשארים בשקט, בלי לסמן בקשת דיבור',discuss:'אפשר לשאול, להבהיר ולהגיב'})[t.phase];
+  $('timer-progress').style.width=`${Math.min(100,duration?elapsed/duration*100:100)}%`;
+  $('next-phase').hidden=t.phase==='discuss';$('next-phase').textContent=t.phase==='share'?(state.settings.reflect?'מעבר לעיבוד':'מעבר לשאלות'):'מעבר לשאלות';
+  if(t.phase==='reflect'&&!t.paused&&state.settings.sound&&state.settings.reflectionSound==='ambient')startAmbient();else stopAmbient();
+}
+function paintSummary(){if(!$('remaining'))return;const time=C.meetingTime(Date.now(),state.people.length);$('remaining').textContent=clock(time.remaining);$('per-person').textContent=clock(Math.floor(time.perPerson/1000)*1000);$('closing-notice').textContent=time.remaining?'הזמן לאדם הוא נקודת ייחוס לשיחה, בלי סדר או חלוקה מחייבים.':'הגיע הזמן לסגירה. חמש הדקות עד 22:30 שמורות לסיום המפגש.';}
+function renderQueue(){
+  const panel=$('queue-panel');if(!panel)return;
+  if(state.view==='active'&&state.turn?.phase!=='discuss'){panel.innerHTML='';return;}
+  const excluded=state.view==='active'?[current()]:[];
+  const available=state.people.filter(p=>!excluded.includes(p.id)&&!state.queue.includes(p.id)&&state.responding!==p.id);
+  panel.innerHTML=`<section class="card"><h2>תור לשיח</h2><p class="hint">מי שרוצה לדבר מסמן למנחה. אפשר לתת קדימות למי שעוד לא נשמע.</p><div id="queue-speaking">${state.responding?`עכשיו מדבר: <strong>${escapeHtml(person(state.responding))}</strong> <button class="small" id="responding-done">סיום תגובה</button>`:'אין דובר מסומן כרגע.'}</div>${state.queue.map((id,i)=>`<div class="queue-item"><span>${i+1}. ${escapeHtml(person(id))}</span><button class="small" data-speak="${escapeHtml(id)}" ${state.responding?'disabled':''}>הזמנה לדבר</button>${i?`<button class="small" data-up="${escapeHtml(id)}" aria-label="הקדמת ${escapeHtml(person(id))} בתור">↑</button>`:''}<button class="small" data-remove="${escapeHtml(id)}" aria-label="הסרת ${escapeHtml(person(id))} מהתור">×</button></div>`).join('')}<details><summary>הוספת בקשת דיבור</summary><div class="chips">${available.map(p=>`<button class="small" data-enqueue="${escapeHtml(p.id)}">${escapeHtml(p.name)}${state.responded.includes(p.id)?' · כבר נשמע':''}</button>`).join('')||'<span class="hint">כולם כבר בתור.</span>'}</div></details></section>`;
+  panel.querySelectorAll('[data-enqueue]').forEach(b=>b.onclick=()=>{state.queue.push(b.dataset.enqueue);save(true);renderQueue();});
+  panel.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{state.queue=state.queue.filter(id=>id!==b.dataset.remove);save(true);renderQueue();});
+  panel.querySelectorAll('[data-up]').forEach(b=>b.onclick=()=>{const i=state.queue.indexOf(b.dataset.up);[state.queue[i-1],state.queue[i]]=[state.queue[i],state.queue[i-1]];save(true);renderQueue();});
+  panel.querySelectorAll('[data-speak]').forEach(b=>b.onclick=()=>{state.responding=b.dataset.speak;state.queue=state.queue.filter(id=>id!==state.responding);if(!state.responded.includes(state.responding))state.responded.push(state.responding);save(true);renderQueue();});
+  if($('responding-done'))$('responding-done').onclick=()=>{state.responding=null;save(true);renderQueue();};
+}
+async function unlockAudio(){
+  try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio){toast('הדפדפן הזה אינו תומך בצלילים. הטיימר החזותי ממשיך לפעול.');return;}if(!audioContext)audioContext=new Audio();if(audioContext.state==='suspended')await audioContext.resume();if(state.turn?.phase==='reflect')paintTimer();}catch{toast('לא ניתן להפעיל שמע כרגע. בדקו את עוצמת הקול והרשאות הדפדפן.');}
+}
+function bell(kind='reflect',force=false){
+  if((!state.settings.sound&&!force)||!audioContext||audioContext.state!=='running')return;
+  const now=audioContext.currentTime;const notes=kind==='end'?[523.25,659.25,783.99]:kind==='reminder'?[523.25,659.25]:[659.25,987.77];
+  notes.forEach((frequency,i)=>{const o=audioContext.createOscillator(),g=audioContext.createGain(),at=now+i*.19;o.type='sine';o.frequency.value=frequency;g.gain.setValueAtTime(0,at);g.gain.linearRampToValueAtTime(.12,at+.015);g.gain.exponentialRampToValueAtTime(.001,at+1.6);o.connect(g);g.connect(audioContext.destination);o.start(at);o.stop(at+1.7);});
+}
+function playEvent(event){stopAmbient();bell(event);}
+function startAmbient(){if(ambient||!audioContext||audioContext.state!=='running')return;const g=audioContext.createGain();g.gain.setValueAtTime(0,audioContext.currentTime);g.gain.linearRampToValueAtTime(.025,audioContext.currentTime+.7);g.connect(audioContext.destination);const nodes=[220,330].map(f=>{const o=audioContext.createOscillator();o.frequency.value=f;o.connect(g);o.start();return o;});ambient={g,nodes};}
+function stopAmbient(){if(!ambient)return;const a=ambient;ambient=null;try{const at=audioContext.currentTime;a.g.gain.cancelScheduledValues(at);a.g.gain.setTargetAtTime(0,at,.06);a.nodes.forEach(o=>o.stop(at+.3));setTimeout(()=>a.g.disconnect(),400);}catch{}}
+async function requestWake(){
+  if(!state.settings.awake||document.visibilityState!=='visible'||wakeLock)return;
+  if(!('wakeLock'in navigator)){$('wake-status').textContent='השארת מסך ער אינה זמינה כאן.';return;}
+  try{wakeLock=await navigator.wakeLock.request('screen');wakeLock.addEventListener('release',()=>{wakeLock=null;});$('wake-status').textContent='המסך יישאר ער.';}catch{$('wake-status').textContent='כדאי להשאיר את המסך פעיל ידנית.';}
+}
+function settingsOpen(){const form=$('settings-form');form.elements.share.value=state.settings.share/60;form.elements.discuss.value=state.settings.discuss/60;form.elements.reflect.value=state.settings.reflect;form.elements.reflectionSound.value=state.settings.reflectionSound;form.elements.sound.checked=state.settings.sound;form.elements.awake.checked=state.settings.awake;$('settings-dialog').showModal();}
+$('settings-toggle').onclick=settingsOpen;$('settings-close').onclick=()=>$('settings-dialog').close();
+$('settings-form').onsubmit=e=>{e.preventDefault();const f=e.target.elements;const now=Date.now();if(state.turn){state.turn.elapsed=C.elapsed(state.turn,now);state.turn.startedAt=now;}state.settings={share:Number(f.share.value)*60,discuss:Number(f.discuss.value)*60,reflect:Number(f.reflect.value),reflectionSound:f.reflectionSound.value,sound:f.sound.checked,awake:f.awake.checked};unlockAudio();if(state.settings.awake)requestWake();else if(wakeLock){wakeLock.release().catch(()=>{});wakeLock=null;}save(true);$('settings-dialog').close();render();};
+$('test-sound').onclick=async()=>{await unlockAudio();bell('reflect',true);};
+$('reset').onclick=()=>{$('settings-dialog').close();$('confirm-dialog').showModal();};$('cancel-reset').onclick=()=>$('confirm-dialog').close();
+$('confirm-reset').onclick=()=>{const settings={...state.settings};state=C.fresh();state.settings=settings;save(true);$('confirm-dialog').close();render();};
+$('export').onclick=()=>{save(true);const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='circle-meeting.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('הגיבוי הוכן להורדה.');};
+$('import').onclick=()=>$('file-input').click();
+$('file-input').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>2000000)throw Error();const loaded=JSON.parse(await file.text());if(!C.validState(loaded))throw Error();if(loaded.turn&&!loaded.turn.paused){C.tick(loaded.turn,loaded.settings,Date.now());C.pause(loaded.turn,Date.now());}state=loaded;save(true);$('settings-dialog').close();render();toast('הגיבוי נטען. טיימר פעיל נטען בהשהיה.');}catch{toast('לא ניתן לטעון את הקובץ. בחרו גיבוי תקין של זמן למעגל.');}e.target.value='';};
+function pulse(){
+  if(state.turn){const before=state.turn.phase;const events=C.tick(state.turn,state.settings,Date.now());if(events.length){playEvent(events.at(-1));save(true);if($('phase-announcement'))$('phase-announcement').textContent={reflect:'זמן לעיבוד בשקט',discuss:'זמן לשאלות ושיח',end:'זמן השיח הסתיים',reminder:'תזכורת: חריגה מזמן השיח'}[events.at(-1)];}paintTimer();if(before!==state.turn.phase)renderQueue();}
+  paintSummary();if(dirty&&Date.now()-lastSaved>=1000)save(true);
+}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){pulse();if(state.view==='active'||state.view==='summary')requestWake();}else{stopAmbient();save(true);}});
+window.addEventListener('pagehide',()=>save(true));
+render();pulse();setInterval(pulse,250);
+if(state.turn&&!state.turn.paused)toast('המפגש שוחזר. הזמן המשיך לרוץ בזמן שהדף היה סגור.');
+// Local HTML remains self-contained. Hosted HTTPS adds installation and offline reopening.
+if(location.protocol==='https:'&&'serviceWorker'in navigator){
+  const manifest=document.createElement('link');manifest.rel='manifest';manifest.href='./manifest.webmanifest';document.head.appendChild(manifest);
+  $('offline-state').textContent='מכין לפתיחה ללא אינטרנט…';
+  navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'})
+    .then(()=>navigator.serviceWorker.ready)
+    .then(()=>{$('offline-state').textContent='מוכן לפתיחה ללא אינטרנט';})
+    .catch(()=>{$('offline-state').textContent='הכנה לשימוש ללא אינטרנט לא הושלמה. נסו לפתוח שוב כשיש חיבור.';});
+  let installPrompt=null;
+  window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;$('install-app').hidden=false;});
+  $('install-app').onclick=async()=>{if(!installPrompt)return;try{await installPrompt.prompt();await installPrompt.userChoice;}catch{}installPrompt=null;$('install-app').hidden=true;};
+  window.addEventListener('appinstalled',()=>{$('install-app').hidden=true;});
+}
+</script>
+</body>
+</html>
