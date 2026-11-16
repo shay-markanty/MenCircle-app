@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="he" dir="rtl">
+<html data-circle-build="8b389d4b48e8a314" lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -23,7 +23,7 @@ header,main,footer{max-width:680px;margin:auto;padding-inline:22px}header{displa
 <div class="fields"><label>שיתוף אישי · דקות<input name="share" type="number" min="0.25" max="60" step="0.25" required></label><label>שיח חופשי · דקות<input name="discuss" type="number" min="0.25" max="60" step="0.25" required></label><label>זמן עיבוד · שניות<input name="reflect" type="number" min="0" max="120" step="1" required></label><label>צליל בזמן העיבוד<select name="reflectionSound"><option value="bells">צליל בתחילה ובסוף</option><option value="ambient">צליל רך מתמשך</option></select></label></div>
 <label class="check"><input name="sound" type="checkbox">התראות קוליות</label><label class="check"><input name="awake" type="checkbox">להשאיר את המסך ער, אם אפשר</label>
 <p class="hint">הזמנים חלים על כולם. שינוי במהלך תור שומר את הזמן שכבר חלף. צלילים פועלים כשהדף פתוח והטלפון מאפשר השמעת שמע.</p><div class="row"><button id="test-sound" type="button" class="small">בדיקת צליל</button><span id="wake-status" class="hint"></span></div><div class="actions"><button class="primary" type="submit">שמירת הגדרות</button><button id="settings-close" type="button">ביטול</button></div></form>
-<hr class="divider"><div class="row"><button id="export" type="button" class="small">ייצוא גיבוי</button><button id="import" type="button" class="small">טעינת גיבוי</button><button id="reset" type="button" class="small danger">מפגש חדש</button></div><p class="hint">גיבוי מאפשר להעביר את המפגש בין מכשירים או לשמור עותק בקובץ.</p></dialog>
+<hr class="divider"><div class="row"><button id="export" type="button" class="small">ייצוא גיבוי</button><button id="import" type="button" class="small">טעינת גיבוי</button><button id="reset" type="button" class="small danger">מפגש חדש</button><button id="update-app" type="button" class="small" hidden>עדכון האפליקציה</button></div><p class="hint">גיבוי מאפשר להעביר את המפגש בין מכשירים או לשמור עותק בקובץ.</p><div id="app-version" class="subtle"></div></dialog>
 <dialog id="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title">להתחיל מפגש חדש?</h2><p>נתוני המפגש הנוכחי יוחלפו. אפשר לייצא גיבוי לפני שמתחילים מחדש.</p><div class="actions"><button id="confirm-reset" class="primary">התחלת מפגש חדש</button><button id="cancel-reset">חזרה למפגש</button></div></dialog>
 <dialog id="controls-dialog" aria-labelledby="controls-title"></dialog>
 <input id="file-input" type="file" accept="application/json,.json">
@@ -240,6 +240,9 @@ render();pulse();setInterval(pulse,250);
 if(state.turn&&!state.turn.paused)toast('המפגש שוחזר. הזמן המשיך לרוץ בזמן שהדף היה סגור.');
 // Local HTML remains self-contained. Hosted HTTPS adds installation and offline reopening.
 if(location.protocol==='https:'&&'serviceWorker'in navigator){
+  $('update-app').hidden=false;
+  if(document.documentElement.dataset.circleBuild)$('app-version').textContent='גרסה '+document.documentElement.dataset.circleBuild.slice(0,8);
+  $('update-app').onclick=()=>{save(true);const updateUrl=new URL('./refresh.html',location.href);updateUrl.searchParams.set('check',String(Date.now()));location.assign(updateUrl.href);};
   const manifest=document.createElement('link');manifest.rel='manifest';manifest.href='./manifest.webmanifest';document.head.appendChild(manifest);
   $('offline-state').textContent='מכין לפתיחה ללא אינטרנט…';
   navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'})
